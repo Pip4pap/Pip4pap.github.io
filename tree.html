@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Free Data Structures Tutorials">
+    <meta name="author" content="Group 1">
+    <link rel="icon" href="../../dsa.png">
+
+    <title>Data Structures and Algorithms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body{
+        background-image: url("images/connec_dots.jpg");
+      }
+      .separator {
+        padding-top: 70px;
+      }
+
+      #brand{
+        color: white;
+        font-weight: 700;
+        
+      }
+
+      .wide{
+        width: 100%;
+      }
+      #navbar ul li:hover{
+        background-color: #2F4779;
+      }
+      .dropdown:hover .dropdown-menu{
+        display: block;
+        color: black;
+      }
+      #main-content{
+        padding-top: 24px;
+      }
+      #main_head{
+        color: #3B5998;
+        text-align: center;
+        font-size: 40px;    
+      }
+      #content{
+        font-size: 16px;      
+        text-align: left;
+      }
+      .uses{
+        font-size: 15px;   
+      }
+      #navbar-design, .footer{
+        background-color: #C92228;
+      }
+      #navbar ul li a{
+        color: white;
+        font-weight: 600;
+      }
+      #navbar ul li ul li a{
+        color: black;
+      }
+      h3{
+        color: #3B5998;  
+      }
+     #b-tree{
+        display: block;
+        margin: auto;
+        width: 50%;
+     }
+     #perform{
+        width: 100%;
+        text-align: center;
+     }
+      footer div p{
+        padding-top: 5px;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav id="navbar-design" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button id="btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="brand" class="navbar-brand" href="#">Data Structures and Algorithms</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basic Data Structures <span class="caret"></span></a>
+              <ul class="dropdown-menu wide">
+                <li><a href="list.html">Lists</a></li>
+                <li><a href="stack.html">Stacks</a></li>
+                <li><a href="queue.html">Queues</a></li>
+                <li><a href="linked_list/linked_list.html">Linked Lists</a></li>
+              </ul>
+            </li>
+            <li><a href="tree.html">Trees</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sorting <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="bubblesort/bubble.html">Bubble Sort</a></li>
+                <li><a href="selection/selectionsort.html">Selection Sort</a></li>
+                <li><a href="insertion/insertion.html">Insertion Sort</a></li>
+                <li><a href="merge/merge_sort.html">Merge Sort</a></li>
+                <li><a href="quick/quick.html">Quick Sort</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Searching <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="binary-search.html">Binary Search</a></li>
+                <li><a href="linear_search">Linear Search</a></li>
+              </ul>
+            </li>
+            <li><a href="graph.html">Graphs</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    <div class="container separator">
+      
+      <!-- Main component for a primary marketing message or call to action -->
+      <div id="main-content" class="jumbotron">
+      <h2 id="main_head">Trees</h2>
+      <p id="content">A tree is a data structure made up of nodes or vertices and edges without having any cycle. A tree with no nodes is called a null or empty tree. A tree that is not empty consists of a root node and potentially many levels of additional nodes that form a hierarchy.</p>
+      <ul class="uses">
+          <li><b>Root:</b> The top node in a tree.</li>
+          <li><b>Child:</b> A node directly connected to another node when moving away from the root.</li>
+          <li><b>Parent:</b> is a node that has an edge to a child node.</li>
+          <li><b>Leaf:</b> A node with no children.</li>
+          <li><b>Subtree:</b> Subtree represents the descendants of a node.</li>
+          <li><b>Edge:</b> The connection between one node and another.</li>
+          <li><b>Path:</b> A sequence of nodes and edges connecting a node with a descendant.</li>
+          <li><b>Depth:</b> The depth of a node is the number of edges from the tree's root node to the node.</li>
+      </ul>
+      
+      <figure>
+          <img src="binary_tree.jpg" alt="binary tree" id="b-tree">
+          <figcaption style="text-align:center;">Figure 1: Trees are hierarchical data structures unlike lists, stacks or queues.</figcaption>
+      </figure>
+    
+         <h3>Tree Traversal</h3>
+         <p id="content">
+         There are three commonly used patterns to visit all the nodes in a tree. The difference between these patterns is the order in which each node is visited. We call this visitation of the nodes a traversal. The three traversals we will look at are called preorder, inorder, and postorder.<br>
+         <b>Preorder: </b>In a preorder traversal, we visit the root node first, then recursively do a preorder traversal of the left subtree, followed by a recursive preorder traversal of the right subtree.<br>
+         <b>Inorder: </b>In an inorder traversal, we recursively do an inorder traversal on the left subtree, visit the root node, and finally do a recursive inorder traversal of the right subtree.<br>
+         <b>Postorder: </b>In a postorder traversal, we recursively do a postorder traversal of the left subtree and the right subtree followed by a visit to the root node.<br>
+         </p>
+      <h3>Binary trees</h3>
+      <p id="content">
+          In a normal tree, every node can have any number of children. Binary tree is a special type of tree data structure in which every node can have a <strong>maximum of 2 children</strong>. One is known as left child and the other is known as right child. <em>Figure 1</em> above is a binary tree.<br>
+          Some types of binary trees include:<br>
+      </p>
+      <ul id="uses">
+        <li><strong>Proper binary tree</strong>: Also called full or strictly binary tree, each node can either have 2 or zero nodes. They are used to express mathematical expressions.</li>
+        <li><strong>Complete binary tree</strong>: Also called perfect binary tree, all the nodes must have exactly two children and at every level of complete binary tree there must be 2^level number of nodes.</li>
+      </ul>
+      <h3>Binary Search Tree(BST)</h3>
+      <div class="row">
+          <div class="col-lg-8">
+            <p id="content">
+                Binary Search Trees, sometimes called sometimes called ordered or sorted binary trees are binary trees in which each vertex has only up to 2 children that satisfies BST property: All vertices in the left subtree of a vertex must hold a value smaller than its own and all vertices in the right subtree of a vertex must hold a value larger than its own. The time complexities of the operations binary search tree are given below:
+            </p>  
+            <div class="table-responsive">
+                <table class="table-striped" id="perform">
+                    <thead>
+                        <tr>
+                        <td><strong>Algorithm</strong></td>
+                        <td><strong>Average</strong></td>
+                        <td><strong>Worst Case</strong></td>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Access</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Search</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Insert</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Delete</td>
+                        <td>O(log n)</td>
+                        <td>O(n)</td>
+                    </tr>
+                </table>
+            </div>
+          </div>
+          <div class="col-lg-4">
+              <img src="images/bst.png" alt="binary search tree of size 9">
+              <figcaption><em>Figure 2: A binary search tree of size 9 with "8" at the root.</em></figcaption>
+          </div>
+      </div>
+      </div>
+    </div> <!-- /container -->
+
+    <!--Start footer-->
+    <footer class="footer">
+      <div class="container">
+        <p>All rights reserved<br/><em>Copyrights &copy; Grp_one</em></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('scripts/jquery.min.js"><\/script>')</script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Free Data Structures Tutorials">
+    <meta name="author" content="Group 1">
+    <link rel="icon" href="../../dsa.png">
+
+    <title>Data Structures and Algorithms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body{
+        background-image: url("images/connec_dots.jpg");
+      }
+      .separator {
+        padding-top: 70px;
+      }
+
+      #brand{
+        color: white;
+        font-weight: 700;
+      }
+
+      .wide{
+        width: 100%;
+      }
+      #navbar ul li:hover{
+        background-color: #2F4779;
+      }
+      .dropdown:hover .dropdown-menu{
+        display: block;
+        color: black;
+      }
+      #main-content{
+        padding-top: 24px;
+      }
+      #main_head{
+        color: #3B5998;
+        text-align: center;
+        font-size: 40px;    
+      }
+      #content{
+        font-size: 16px;      
+        text-align: left;
+      }
+      #uses{
+        font-size: 15px;   
+      }
+      #navbar-design, .footer{
+        background-color: #C92228;
+      }
+      #navbar ul li a{
+        color: white;
+        font-weight: 600;
+      }
+      #navbar ul li ul li a{
+        color: black;
+      }
+      footer div p{
+        padding-top: 5px;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav id="navbar-design" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button id="btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="brand" class="navbar-brand" href="index.html">Data Structures and Algorithms</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basic Data Structures <span class="caret"></span></a>
+              <ul class="dropdown-menu wide">
+                <li><a href="list.html">Lists</a></li>
+                <li><a href="stack.html">Stacks</a></li>
+                <li><a href="queue.html">Queues</a></li>
+                <li><a href="linked-list.html">Linked Lists</a></li>
+              </ul>
+            </li>
+            <li><a href="tree.html">Trees</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sorting <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="bubblesort/bubble.html">Bubble Sort</a></li>
+                <li><a href="selection/selectionsort.html">Selection Sort</a></li>
+                <li><a href="insertion/insertion.html">Insertion Sort</a></li>
+                <li><a href="merge/merge_sort.html">Merge Sort</a></li>
+                <li><a href="quick/quick.html">Quick Sort</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Searching <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="binary-search.html">Binary Search</a></li>
+                <li><a href="linear_search.html">Linear Search</a></li>
+              </ul>
+            </li>
+            <li><a href="graph.html">Graphs</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container separator">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div id="main-content" class="jumbotron">
+        <h2 id="main_head">Graphs</h2>
+        <p id="content">A graph is a pictorial representation of a set of objects where some pairs of objects are connected by links. The interconnected objects are represented by points termed as vertices, and the links that connect the vertices are called edges.<br/>
+            Lets consider a graph as a pair of sets (V, E), where V is the set of vertices and E is the set of edges connecting the pairs of vertices. Take a look at the following graph −
+        </p>
+        <img src="images/graph_basics.jpg">
+        <p id="content">In the above graph,
+
+            V = {a, b, c, d, e}<br/>
+
+            E = {ab, ac, bd, cd, de}
+        </p>
+
+        <h3><strong>Graph representantion</strong></h3>
+        <p id="content">This can be done in many ways but the most common ways are:</p>
+        <ul>
+            <li><b>Adjacency Matrix: </b>A structure for representing a graph in which the presence of arcs between nodes is indicated by an entry in a matrix.</li>
+            <li><b>Adjacency Lists: </b> An alternative structure for representing a graph in which the arcs are stored as lists of connections between nodes.</li>
+        </ul>
+       
+        <p id="content">The following are the basic operations of the graph structure:</p>
+        <ul id="uses">
+            <li><b>Add Vertex </b>− Adds a vertex to the graph.</li>
+            <li><b>Add Edge </b>− Adds an edge between the two vertices of the graph.</li>
+            <li><b>Display Vertex </b>- Displays the vertex of the graph.</li>
+        </ul>
+        <p id="content">Follow <a href="https://visualgo.net/en/dfsbfs" target="_blank" style="font-size:18px">this</a> link for illustrations on graph traversal using breadth first search and depth first search</p>
+      </div>
+    </div> <!-- /container -->
+
+    <!--Start footer-->
+    <footer class="footer">
+      <div class="container">
+        <p>All rights reserved<br/><em>Copyrights &copy; Grp_one</em></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('scripts/jquery.min.js"><\/script>')</script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

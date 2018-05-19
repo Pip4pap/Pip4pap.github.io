@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Free Data Structures Tutorials">
+    <meta name="author" content="Group 1">
+    <link rel="icon" href="../../dsa.png">
+
+    <title>Data Structures and Algorithms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body{
+        background-image: url("images/connec_dots.jpg");
+      }
+      .separator {
+        padding-top: 70px;
+      }
+
+      #brand{
+        color: white;
+        font-weight: 700;
+      }
+
+      .wide{
+        width: 100%;
+      }
+      #navbar ul li:hover{
+        background-color: #2F4779;
+      }
+      .dropdown:hover .dropdown-menu{
+        display: block;
+        color: black;
+      }
+      #main-content{
+        padding-top: 24px;
+      }
+      #main_head{
+        color: #3B5998;
+        text-align: center;
+        font-size: 40px;    
+      }
+      #content{
+        font-size: 16px;      
+        text-align: left;
+      }
+      #uses{
+        font-size: 15px;   
+      }
+      #navbar-design, .footer{
+        background-color: #C92228;
+      }
+      #navbar ul li a{
+        color: white;
+        font-weight: 600;
+      }
+      #navbar ul li ul li a{
+        color: black;
+      }
+      footer div p{
+        padding-top: 5px;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav id="navbar-design" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button id="btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="brand" class="navbar-brand" href="index.html">Data Structures and Algorithms</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basic Data Structures <span class="caret"></span></a>
+              <ul class="dropdown-menu wide">
+                <li><a href="list.html">Lists</a></li>
+                <li><a href="stack.html">Stacks</a></li>
+                <li><a href="queue.html">Queues</a></li>
+                <li><a href="linked_list/linked_list.html">Linked Lists</a></li>
+              </ul>
+            </li>
+            <li><a href="tree.html">Trees</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sorting <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="bubblesort/bubble.html">Bubble Sort</a></li>
+                <li><a href="selection/selectionsort.html">Selection Sort</a></li>
+                <li><a href="insertion/insertion.html">Insertion Sort</a></li>
+                <li><a href="merge/merge_sort.html">Merge Sort</a></li>
+                <li><a href="quick/quick.html">Quick Sort</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Searching <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="binary-search.html">Binary Search</a></li>
+                <li><a href="linear_search.html">Linear Search</a></li>
+              </ul>
+            </li>
+            <li><a href="graph.html">Graphs</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container separator">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div id="main-content" class="jumbotron">
+        <h2 id="main_head">Binary search</h2>
+        <p id="content">
+            Binary search is an efficient algorithm for finding an item from an <strong>ordered</strong> list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one. Thus, it's a divide and conquer algorithm.<br>
+            Its run-time complexity is <em>O(log n) - </em> The number of operations grows slower than the list does because you're halving the "search space" with each operation.
+             Instead of searching the list in sequence, a binary search will start by examining the middle item. If that item is the one we are searching for, we are done. If it is not the correct item, we can use the ordered nature of the list to eliminate half of the remaining items. If the item we are searching for is greater than the middle item, we know that the entire lower half of the list as well as the middle item can be eliminated from further consideration. The item, if it is in the list, must be in the upper half.
+        </p>
+        <p id="content">
+            We can then repeat the process with the upper half. Start at the middle item and compare it against what we are looking for. Again, we either find it or split the list in half, therefore eliminating another large part of our possible search space.
+        </p>
+        <p id="content">
+            The animation below shows a comparison between binary search and sequential(linear) search. Both algorithms work with the same data set consisting of numbers to find the number 37.
+        </p>
+        <div class="row">
+            <div class="col-lg-8">
+                <img src="images/vs.gif" alt="binary vs linear search animation">
+            </div>
+            <div class="col-lg-4">
+                <p id="content">
+                    <em>Clearly, the binary search algorithm returns results quicker than linear search but only on condition that the list to be searched is already <strong>sorted</strong>.</em>
+                </p>
+            </div>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!--Start footer-->
+    <footer class="footer">
+      <div class="container">
+        <p>All rights reserved<br><em>Copyrights &copy; Grp_one</em></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('scripts/jquery.min.js"><\/script>')</script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

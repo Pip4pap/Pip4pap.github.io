@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Free Data Structures Tutorials">
+    <meta name="author" content="Group 1">
+    <link rel="icon" href="../../dsa.png">
+
+    <title>Data Structures and Algorithms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body{
+        background-image: url("images/connec_dots.jpg");
+      }
+      .separator {
+        padding-top: 70px;
+      }
+
+      #brand{
+        color: white;
+        font-weight: 700;
+      }
+
+      .wide{
+        width: 100%;
+      }
+      #navbar ul li:hover{
+        background-color: #2F4779;
+      }
+      .dropdown:hover .dropdown-menu{
+        display: block;
+        color: black;
+      }
+      #main-content{
+        padding-top: 24px;
+      }
+      .main_head{
+        color: #3B5998;
+        text-align: center;
+        font-size: 40px;    
+      }
+      #content{
+        font-size: 16px;      
+        text-align: left;
+      }
+      #navbar-design, .footer{
+        background-color: #C92228;
+      }
+      #navbar ul li a{
+        color: white;
+        font-weight: 600;
+      }
+      #navbar ul li ul li a{
+        color: black;
+      }
+      #a{
+          height: 30px;
+          padding: 2px;
+      }
+      #queue_visual{
+          white-space: pre;
+          font-size: 30px;
+      }
+      #control{
+          float: none;
+          text-align: center;
+      }
+      #output{
+         color: #337AB7;
+      }
+      footer div p{
+        padding-top: 5px;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav id="navbar-design" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button id="btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="brand" class="navbar-brand" href="index.html">Data Structures and Algorithms</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basic Data Structures <span class="caret"></span></a>
+              <ul class="dropdown-menu wide">
+                <li><a href="list.html">Lists</a></li>
+                <li><a href="stack.html">Stacks</a></li>
+                <li><a href="queue.html">Queues</a></li>
+                <li><a href="linked_list/linked_list.html">Linked Lists</a></li>
+              </ul>
+            </li>
+            <li><a href="tree.html">Trees</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sorting <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="bubblesort/bubble.html">Bubble Sort</a></li>
+                <li><a href="selection/selectionsort.html">Selection Sort</a></li>
+                <li><a href="insertion/insertion.html">Insertion Sort</a></li>
+                <li><a href="merge/merge_sort.html">Merge Sort</a></li>
+                <li><a href="quick/quick.html">Quick Sort</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Searching <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="binary-search.html">Binary Search</a></li>
+                <li><a href="linear_search.html">Linear Search</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Graphs</a></li>
+            <li><a href="about.html">About us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container separator">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div id="main-content" class="jumbotron">
+        <h2 class="main_head">Queues</h2>
+        <p id="content">A queue is an ordered collection of items where addition and removal of data items takes place at different ends. The end where data items are added is called the rear and the end where items are removed is called the front.The most recently added item to the queue is at the rear and the item that has been longest in the queue is at the front. The ordering principle of a queue is FIFO(first in first out).<br/><br/>
+            An analogy that can be used to explain queues is a <em>waiting line in the bank</em>. Assuming everyone who comes into the bank wants to see the bank tellers, they make a line and the first person on the line will be attended to before the next person and the last person in the line will be worked upon last.There is no skipping and a person cannot be worked upon until he has waited enough to be at the front of the line.<br/>
+        Another anology would be keystrokes of a computer keyboard.Whenever an individual is typing, the characters that are pressed first appear on the screen before the chracters that are pressed last
+            <br/>
+        The queue operations include;
+        </p>
+        <ul>
+          <li><b>Enqueue: </b>Adds a new item to the rear of the queue</li>
+          <li><b>Dequeue: </b>Removes the front item from the queue</li>
+          <li><b>Peek: </b>Returns the item at the front of the queue</li>
+          <li><b>Size: </b>Returns the number of items in the queue.Takes no parameters and returns an int</li>
+        </ul>
+        <div class="panel panel-primary">
+            <div class="panel-heading"><marquee>Try it yourself</marquee></div>
+            <div class="panel-body">
+                <p id="queue_visual"></p>
+            </div>
+        </div>
+        <div id="control" class="col-lg-6 center-block">
+            <input id="a" type="text" class="form-group" placeholder="Enter value to enqueue">
+
+            <button type="button" class="btn btn-primary" onclick="enqueue_node()">Enqueue</button> 
+            <button type="button" class="btn btn-primary" onclick="peek()">Peek</button>
+            <button type="button" class="btn btn-primary" onclick="dequeue_node()">Dequeue</button>
+ 
+            <p id="output"></p>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!--Start footer-->
+    <footer class="footer">
+      <div class="container">
+        <p>All rights reserved</br><em>Copyrights &copy; Grp_one</em></p>
+      </div>
+    </footer>
+    <script>
+        // Creates a queue
+        var Queue = function() {
+            this.count = 0;
+            this.lowestCount = 0;
+            this.storage = [];
+        }
+
+        // Enqueues a node(value)
+        Queue.prototype.enqueue = function(value) {
+            this.storage[this.count] = value;
+            this.count++;
+            return value;
+        }// Dequeues a node
+        Queue.prototype.dequeue = function() {
+            if(this.count - this.lowestCount === 0){
+                return undefined;              
+            }
+            var result = this.storage[this.lowestCount];
+            delete this.storage[this.lowestCount];
+            this.lowestCount++;
+            return result;
+        }//Returns value on top of stack
+        Queue.prototype.peek = function() {
+            return this.storage[this.lowestCount];
+        }//Displays stack
+        Queue.prototype.view = function() {
+            var arr = [];
+            var x = this.count;
+            for(var i = 0; i < x; i++) {
+                arr.push(this.storage[i]); 
+            }
+            return arr;
+        }//Returns size of stack
+        Queue.prototype.size = function() {
+            return this.count - this.lowestCount;
+        }
+        var my_queue = new Queue();    //Create stack object
+      
+        function enqueue_node(){
+            if(document.getElementById("a").value == ""){
+                swal("Ohhhh Noes", "No value entered!", "error");
+            } else {
+                document.getElementById("output").innerHTML ="You just enqueued " +my_queue.enqueue(document.getElementById("a").value) +" and the queue size is "+my_queue.size();
+            } 
+        }
+        function dequeue_node(){   
+            if(my_queue.size() == 0){
+                swal("Ohhhh Noes", "There are no items in the queue!", "error");
+            } else {
+                document.getElementById("output").innerHTML ="You just removed " +my_queue.dequeue() +" from the queue and the queue size is "+my_queue.size();
+            }
+        }
+        function peek(){   
+            if(my_queue.peek() == undefined){
+                swal("Ohhhh Noes", "There are no items in the queue!", "error");
+            } else {
+                document.getElementById("output").innerHTML = "The item at the front of the queue is: " +my_queue.peek();
+            }
+        }
+        function view_queue(){
+            document.getElementById("queue_visual").innerHTML = my_queue.view();  
+        }      
+      setInterval(view_queue, 250);
+    </script>
+
+    <!-- Bootstrap core JavaScript and SweetAlert.js
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="scripts/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('scripts/jquery.min.js"><\/script>')</script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
