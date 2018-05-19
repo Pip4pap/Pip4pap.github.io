@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Free Data Structures Tutorials">
+    <meta name="author" content="Group 1">
+    <link rel="icon" href="../../dsa.png">
+    
+    <script src="processing.js"></script>
+    <script src="javascript.js"></script>
+    <title>Data Structures and Algorithms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      body{
+        background-image: url("/images/connec_dots.jpg");
+      }
+      .separator {
+        padding-top: 70px;
+      }
+
+      #brand{
+        color: white;
+        font-weight: 700;
+      }
+
+      .wide{
+        width: 100%;
+      }
+      #navbar ul li:hover{
+        background-color: #2F4779;
+      }
+      .dropdown:hover .dropdown-menu{
+        display: block;
+        color: black;
+      }
+      #main-content{
+        padding-top: 24px;
+      }
+      .main_head{
+        color: #3B5998;
+        text-align: center;
+        font-size: 40px;    
+      }
+      #content{
+        font-size: 17px;      
+        text-align: left;
+      }
+      #list{
+          font-size: 17px;
+      }
+      #navbar-design, .footer{
+        background-color: #C92228;
+      }
+      #navbar ul li a{
+        color: white;
+        font-weight: 600;
+      }
+      #navbar ul li ul li a{
+        color: black;
+      }
+      footer div p{
+        padding-top: 5px;
+        color: white;
+        text-align: center;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav id="navbar-design" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button id="btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="brand" class="navbar-brand" href="index.html">Data Structures and Algorithms</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basic Data Structures <span class="caret"></span></a>
+              <ul class="dropdown-menu wide">
+                <li><a href="/list.html">Lists</a></li>
+                <li><a href="/stack.html">Stacks</a></li>
+                <li><a href="/queue.html">Queues</a></li>
+                <li><a href="/linked_list/linked-list.html">Linked Lists</a></li>
+              </ul>
+            </li>
+            <li><a href="/tree.html">Trees</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sorting <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/bubblesort/bubble.html">Bubble Sort</a></li>
+                <li><a href="/selection/selectionsort.html">Selection Sort</a></li>
+                <li><a href="/insertion/insertion.html">Insertion Sort</a></li>
+                <li><a href="merge_sort.html">Merge Sort</a></li>
+                <li><a href="/quick/quick.html">Quick Sort</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Searching <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/binary-search.html">Binary Search</a></li>
+                <li><a href="/linear_search.html">Linear Search</a></li>
+              </ul>
+            </li>
+            <li><a href="/graph.html">Graphs</a></li>
+            <li><a href="/about.html">About us</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container separator">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div id="main-content" class="jumbotron">
+          <h2 class="main_head">Merge Sort</h2>
+          <p id="content">
+              The merge sort is part of a group of algorithms that employ a paradigm known as divide and conquer. This paradigm is based on recursion. The worst-case time complexity of merge sort is O(nlog n) but it's space complexity is O(n). The problem is broken down into subproblems similar to the original problem. The subproblems are solved recursively and the solutions to the subproblems combined to solve the original problem.</p>
+              <p id="content">
+              A base case is a subarray containing fewer than two elements. A base case is already sorted since a subarray with no elements or one element is already sorted.</p>
+              <p id="content">
+                Consider an array holding elements [p..r] where p and r are indexes<br>
+                We divide and conquer only when p < r.<br>
+                Here's how merge sort uses divide and conquer</p>
+            <ul id="list">
+                <li>
+                    <strong>Divide </strong> by finding the number <em>q</em> of the position midway between <em>p</em> and <em>r</em>.
+                    This is done by dividing the sum of <em>p</em> and <em>r</em> by 2 and rounding down.
+                </li>
+                <li>
+                    <strong>Conquer </strong> by recursively sorting the subarrays in each of the two subproblems created by the divide step. That is, recursively sort the subarray array[<em>p</em>..<em>q</em>] and recursively sort the subarray array[<em>q</em>+1..<em>r</em>].
+                </li>
+                <li>
+                    <strong>Merge </strong> by combining the two sorted subarrays back into the single sorted subarray array[<em>p</em>..<em>r</em>]..
+                </li>
+            </ul>
+            <h3>Algorithm</h3>
+            <pre>
+    Step 1 − if it is only one element in the list it is already sorted, return.
+    Step 2 − divide the list recursively into two halves until it can no more be divided.
+    Step 3 − merge the smaller lists into new list in sorted order.
+
+            </pre>
+          
+          <p id="content">A visualisation for a  merge sort</p>
+      <canvas id="dsanim" data-processing-sources="constants.pde animation.pde animationinstruction.pde animationobject.pde merge.pde animatedcode.pde animatedarray.pde utils.pde indicator.pde animatedvariable.pde controls.pde"></canvas>
+<br>
+<button onclick="playSketch();">Play</button>
+<button onclick="pauseSketch();">Pause</button>
+<button onclick="stepSketch();">Step</button>
+<button onclick="restartSketch();">restart</button>
+Speed:<input type="range" name="speed" min="1" max="10" default="5" onchange="changeSpeed(this.value)">
+      </div>
+
+    </div> <!-- /container -->
+
+    <!--Start footer-->
+    <footer class="footer">
+      <div class="container">
+        <p>All rights reserved</br><em>Copyrights &copy; Grp_one</em></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('scripts/jquery.min.js"><\/script>')</script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
